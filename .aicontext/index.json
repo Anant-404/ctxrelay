@@ -1,0 +1,1098 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-07T18:08:49.320Z",
+  "root": "agentbridge",
+  "stack": [],
+  "stats": {
+    "files": 45,
+    "indexedFiles": 45,
+    "loc": 3257
+  },
+  "files": [
+    {
+      "path": "eslint.config.js",
+      "hash": "cc10a808",
+      "lang": "js",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "tseslint",
+          "kind": "default"
+        }
+      ],
+      "imports": [
+        "@eslint/js",
+        "typescript-eslint"
+      ]
+    },
+    {
+      "path": "examples/sample-next-app/app/api/checkout/route.ts",
+      "hash": "dfba7f67",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "POST",
+          "kind": "function"
+        },
+        {
+          "name": "GET",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "stripe",
+        "../../../lib/db.js"
+      ]
+    },
+    {
+      "path": "examples/sample-next-app/app/dashboard/page.tsx",
+      "hash": "c19e3079",
+      "lang": "tsx",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "DashboardPage",
+          "kind": "default"
+        }
+      ],
+      "imports": [
+        "../../src/components/CheckoutForm.js"
+      ]
+    },
+    {
+      "path": "examples/sample-next-app/lib/db.ts",
+      "hash": "db8c6425",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "db",
+          "kind": "const"
+        },
+        {
+          "name": "connect",
+          "kind": "function"
+        }
+      ],
+      "imports": []
+    },
+    {
+      "path": "examples/sample-next-app/src/components/CheckoutForm.tsx",
+      "hash": "3bb851f5",
+      "lang": "tsx",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "CheckoutForm",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "react"
+      ]
+    },
+    {
+      "path": "examples/sample-next-app/src/models/Session.ts",
+      "hash": "9923cd00",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "Session",
+          "kind": "const"
+        }
+      ],
+      "imports": [
+        "mongoose"
+      ]
+    },
+    {
+      "path": "examples/sample-next-app/src/server.ts",
+      "hash": "6613224b",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [],
+      "imports": [
+        "express"
+      ]
+    },
+    {
+      "path": "examples/sample-next-app/supabase/migrations/0001_init.sql",
+      "hash": "c83d9575",
+      "lang": "sql",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [],
+      "imports": []
+    },
+    {
+      "path": "scripts/copy-wasm.mjs",
+      "hash": "be27f089",
+      "lang": "js",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [],
+      "imports": [
+        "node:module"
+      ]
+    },
+    {
+      "path": "src/cli.ts",
+      "hash": "b01fe752",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [],
+      "imports": [
+        "commander",
+        "picocolors",
+        "./commands/init.js",
+        "./commands/index.js",
+        "./commands/status.js",
+        "./commands/context.js",
+        "./commands/handoff.js",
+        "./commands/decision.js",
+        "./commands/enrich.js",
+        "./commands/tasks.js"
+      ]
+    },
+    {
+      "path": "src/commands/context.ts",
+      "hash": "f0165b44",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "ContextOptions",
+          "kind": "interface"
+        },
+        {
+          "name": "buildContextData",
+          "kind": "function"
+        },
+        {
+          "name": "runContext",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "picocolors",
+        "../core/paths.js",
+        "../core/store.js",
+        "../core/budget.js",
+        "../schema/index-schema.js"
+      ]
+    },
+    {
+      "path": "src/commands/decision.ts",
+      "hash": "abe413b1",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "runDecision",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "picocolors",
+        "../core/paths.js",
+        "../core/store.js",
+        "../templates/index.js"
+      ]
+    },
+    {
+      "path": "src/commands/enrich.ts",
+      "hash": "ad789e42",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "EnrichOptions",
+          "kind": "interface"
+        },
+        {
+          "name": "runEnrich",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "picocolors",
+        "../core/paths.js",
+        "../core/store.js",
+        "../schema/index-schema.js"
+      ]
+    },
+    {
+      "path": "src/commands/handoff.ts",
+      "hash": "585040f7",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "HandoffOptions",
+          "kind": "interface"
+        },
+        {
+          "name": "runHandoff",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "node:readline/promises",
+        "picocolors",
+        "../core/paths.js",
+        "../core/store.js"
+      ]
+    },
+    {
+      "path": "src/commands/index.ts",
+      "hash": "6306ad4b",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "IndexOptions",
+          "kind": "interface"
+        },
+        {
+          "name": "IndexResult",
+          "kind": "interface"
+        },
+        {
+          "name": "runIndex",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "picocolors",
+        "../core/paths.js",
+        "../core/stack-detect.js",
+        "../core/store.js",
+        "../core/walk.js",
+        "../core/hash.js",
+        "../extractors/registry.js",
+        "../extractors/types.js",
+        "../schema/index-schema.js"
+      ]
+    },
+    {
+      "path": "src/commands/init.ts",
+      "hash": "243c737d",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "runInit",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "picocolors",
+        "../core/paths.js",
+        "../core/stack-detect.js",
+        "../core/managed-block.js",
+        "../core/store.js",
+        "../templates/index.js",
+        "./index.js"
+      ]
+    },
+    {
+      "path": "src/commands/status.ts",
+      "hash": "d16e6520",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "runStatus",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "picocolors",
+        "../core/paths.js",
+        "../core/store.js",
+        "../core/walk.js",
+        "../core/hash.js"
+      ]
+    },
+    {
+      "path": "src/commands/tasks.ts",
+      "hash": "5ea26a22",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "registerTasks",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "commander",
+        "picocolors",
+        "../core/paths.js",
+        "../core/tasks-store.js"
+      ]
+    },
+    {
+      "path": "src/core/budget.ts",
+      "hash": "a9aba15a",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "estimateTokens",
+          "kind": "function"
+        },
+        {
+          "name": "Section",
+          "kind": "interface"
+        },
+        {
+          "name": "assemble",
+          "kind": "function"
+        }
+      ],
+      "imports": []
+    },
+    {
+      "path": "src/core/hash.ts",
+      "hash": "0dd24be0",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "shortHash",
+          "kind": "function"
+        }
+      ],
+      "imports": []
+    },
+    {
+      "path": "src/core/managed-block.ts",
+      "hash": "683584a4",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "mergeManagedBlock",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "../templates/index.js"
+      ]
+    },
+    {
+      "path": "src/core/paths.ts",
+      "hash": "7d09f35b",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "ProjectPaths",
+          "kind": "interface"
+        },
+        {
+          "name": "findRepoRoot",
+          "kind": "function"
+        },
+        {
+          "name": "resolvePaths",
+          "kind": "function"
+        },
+        {
+          "name": "requireProject",
+          "kind": "function"
+        }
+      ],
+      "imports": []
+    },
+    {
+      "path": "src/core/stack-detect.ts",
+      "hash": "baf70565",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "StackInfo",
+          "kind": "interface"
+        },
+        {
+          "name": "detectStack",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "./store.js"
+      ]
+    },
+    {
+      "path": "src/core/store.ts",
+      "hash": "5b785862",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "AbConfig",
+          "kind": "interface"
+        },
+        {
+          "name": "DEFAULT_CONFIG",
+          "kind": "const"
+        },
+        {
+          "name": "MarkdownDoc",
+          "kind": "interface"
+        },
+        {
+          "name": "fileExists",
+          "kind": "function"
+        },
+        {
+          "name": "readText",
+          "kind": "function"
+        },
+        {
+          "name": "writeText",
+          "kind": "function"
+        },
+        {
+          "name": "readMarkdown",
+          "kind": "function"
+        },
+        {
+          "name": "writeMarkdown",
+          "kind": "function"
+        },
+        {
+          "name": "readJson",
+          "kind": "function"
+        },
+        {
+          "name": "writeJson",
+          "kind": "function"
+        },
+        {
+          "name": "readConfig",
+          "kind": "function"
+        },
+        {
+          "name": "readIndex",
+          "kind": "function"
+        },
+        {
+          "name": "writeIndex",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "gray-matter",
+        "../schema/index-schema.js",
+        "./paths.js"
+      ]
+    },
+    {
+      "path": "src/core/tasks-store.ts",
+      "hash": "e2243062",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "TaskStatus",
+          "kind": "type"
+        },
+        {
+          "name": "Task",
+          "kind": "interface"
+        },
+        {
+          "name": "readTasks",
+          "kind": "function"
+        },
+        {
+          "name": "nextTaskId",
+          "kind": "function"
+        },
+        {
+          "name": "writeTasks",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "./paths.js",
+        "./store.js"
+      ]
+    },
+    {
+      "path": "src/core/walk.ts",
+      "hash": "cd39ff87",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "CODE_EXTS",
+          "kind": "const"
+        },
+        {
+          "name": "WalkResult",
+          "kind": "interface"
+        },
+        {
+          "name": "walkFiles",
+          "kind": "function"
+        },
+        {
+          "name": "toRel",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "fast-glob",
+        "./store.js"
+      ]
+    },
+    {
+      "path": "src/extractors/express.ts",
+      "hash": "99e59c1a",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "expressExtractor",
+          "kind": "const"
+        }
+      ],
+      "imports": [
+        "../schema/index-schema.js",
+        "./types.js"
+      ]
+    },
+    {
+      "path": "src/extractors/js-ts.ts",
+      "hash": "73296393",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "extractImports",
+          "kind": "function"
+        },
+        {
+          "name": "extractExports",
+          "kind": "function"
+        },
+        {
+          "name": "jsTsExtractor",
+          "kind": "const"
+        }
+      ],
+      "imports": [
+        "../schema/index-schema.js",
+        "./types.js"
+      ]
+    },
+    {
+      "path": "src/extractors/mongoose.ts",
+      "hash": "8a44a99f",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "mongooseExtractor",
+          "kind": "const"
+        }
+      ],
+      "imports": [
+        "../schema/index-schema.js",
+        "./types.js"
+      ]
+    },
+    {
+      "path": "src/extractors/nextjs.ts",
+      "hash": "13649455",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "nextjsExtractor",
+          "kind": "const"
+        },
+        {
+          "name": "nextIsClient",
+          "kind": "const"
+        }
+      ],
+      "imports": [
+        "../schema/index-schema.js",
+        "./types.js"
+      ]
+    },
+    {
+      "path": "src/extractors/parser.ts",
+      "hash": "dbbe9778",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "parseFile",
+          "kind": "function"
+        },
+        {
+          "name": "astAvailable",
+          "kind": "function"
+        }
+      ],
+      "imports": []
+    },
+    {
+      "path": "src/extractors/prisma.ts",
+      "hash": "6a232241",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "prismaExtractor",
+          "kind": "const"
+        }
+      ],
+      "imports": [
+        "../schema/index-schema.js",
+        "./types.js"
+      ]
+    },
+    {
+      "path": "src/extractors/react.ts",
+      "hash": "ff511c2d",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "reactExtractor",
+          "kind": "const"
+        }
+      ],
+      "imports": [
+        "../schema/index-schema.js",
+        "./types.js",
+        "./nextjs.js"
+      ]
+    },
+    {
+      "path": "src/extractors/registry.ts",
+      "hash": "f68b413e",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "activeExtractors",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "../core/store.js",
+        "./express.js",
+        "./js-ts.js",
+        "./mongoose.js",
+        "./nextjs.js",
+        "./prisma.js",
+        "./react.js",
+        "./sql.js",
+        "./supabase.js",
+        "./types.js"
+      ]
+    },
+    {
+      "path": "src/extractors/sql.ts",
+      "hash": "9dc9486c",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "extractTables",
+          "kind": "function"
+        },
+        {
+          "name": "sqlExtractor",
+          "kind": "const"
+        }
+      ],
+      "imports": [
+        "../schema/index-schema.js",
+        "./types.js"
+      ]
+    },
+    {
+      "path": "src/extractors/supabase.ts",
+      "hash": "d06d6394",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "supabaseExtractor",
+          "kind": "const"
+        }
+      ],
+      "imports": [
+        "../schema/index-schema.js",
+        "./types.js"
+      ]
+    },
+    {
+      "path": "src/extractors/types.ts",
+      "hash": "20e2b2e3",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "FileMeta",
+          "kind": "interface"
+        },
+        {
+          "name": "ExtractCtx",
+          "kind": "interface"
+        },
+        {
+          "name": "IndexContribution",
+          "kind": "interface"
+        },
+        {
+          "name": "emptyContribution",
+          "kind": "function"
+        },
+        {
+          "name": "Extractor",
+          "kind": "interface"
+        },
+        {
+          "name": "stripComments",
+          "kind": "function"
+        },
+        {
+          "name": "normalizeImports",
+          "kind": "function"
+        }
+      ],
+      "imports": [
+        "../schema/index-schema.js"
+      ]
+    },
+    {
+      "path": "src/schema/index-schema.ts",
+      "hash": "d0364998",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "SCHEMA_VERSION",
+          "kind": "const"
+        },
+        {
+          "name": "ExportKind",
+          "kind": "type"
+        },
+        {
+          "name": "ExportEntry",
+          "kind": "interface"
+        },
+        {
+          "name": "FileEntry",
+          "kind": "interface"
+        },
+        {
+          "name": "RouteEntry",
+          "kind": "interface"
+        },
+        {
+          "name": "ComponentEntry",
+          "kind": "interface"
+        },
+        {
+          "name": "PostgresTable",
+          "kind": "interface"
+        },
+        {
+          "name": "PrismaModel",
+          "kind": "interface"
+        },
+        {
+          "name": "MongoCollection",
+          "kind": "interface"
+        },
+        {
+          "name": "DbSection",
+          "kind": "interface"
+        },
+        {
+          "name": "IndexStats",
+          "kind": "interface"
+        },
+        {
+          "name": "CodebaseIndex",
+          "kind": "interface"
+        },
+        {
+          "name": "emptyIndex",
+          "kind": "function"
+        },
+        {
+          "name": "validateIndex",
+          "kind": "function"
+        },
+        {
+          "name": "isValidIndex",
+          "kind": "function"
+        }
+      ],
+      "imports": []
+    },
+    {
+      "path": "src/templates/index.ts",
+      "hash": "678f3b14",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "MANAGED_BEGIN",
+          "kind": "const"
+        },
+        {
+          "name": "MANAGED_END",
+          "kind": "const"
+        },
+        {
+          "name": "stateTemplate",
+          "kind": "function"
+        },
+        {
+          "name": "handoffTemplate",
+          "kind": "function"
+        },
+        {
+          "name": "planTemplate",
+          "kind": "function"
+        },
+        {
+          "name": "decisionsTemplate",
+          "kind": "function"
+        },
+        {
+          "name": "managedBlock",
+          "kind": "function"
+        },
+        {
+          "name": "agentConfigTemplate",
+          "kind": "function"
+        }
+      ],
+      "imports": []
+    },
+    {
+      "path": "test/core.test.ts",
+      "hash": "456c348a",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [],
+      "imports": [
+        "vitest",
+        "../src/core/stack-detect.js",
+        "../src/core/budget.js",
+        "../src/core/managed-block.js",
+        "../src/core/hash.js",
+        "../src/templates/index.js"
+      ]
+    },
+    {
+      "path": "test/extractors.test.ts",
+      "hash": "345a1661",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "createCheckout",
+          "kind": "function"
+        },
+        {
+          "name": "handleWebhook",
+          "kind": "const"
+        },
+        {
+          "name": "Foo",
+          "kind": "class"
+        },
+        {
+          "name": "POST",
+          "kind": "function"
+        },
+        {
+          "name": "GET",
+          "kind": "function"
+        },
+        {
+          "name": "CheckoutForm",
+          "kind": "function"
+        },
+        {
+          "name": "Session",
+          "kind": "const"
+        },
+        {
+          "name": "Page",
+          "kind": "default"
+        },
+        {
+          "name": "P",
+          "kind": "default"
+        },
+        {
+          "name": "a",
+          "kind": "const"
+        },
+        {
+          "name": "c",
+          "kind": "const"
+        }
+      ],
+      "imports": [
+        "vitest",
+        "../src/extractors/js-ts.js",
+        "../src/extractors/express.js",
+        "../src/extractors/nextjs.js",
+        "../src/extractors/react.js",
+        "../src/extractors/prisma.js",
+        "../src/extractors/sql.js",
+        "../src/extractors/mongoose.js",
+        "../src/extractors/types.js",
+        "stripe",
+        "react",
+        "./local"
+      ]
+    },
+    {
+      "path": "test/integration.test.ts",
+      "hash": "2261867a",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [],
+      "imports": [
+        "vitest",
+        "../src/commands/init.js",
+        "../src/commands/index.js",
+        "../src/commands/context.js",
+        "../src/commands/handoff.js"
+      ]
+    },
+    {
+      "path": "test/tasks.test.ts",
+      "hash": "67b2dcdb",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [],
+      "imports": [
+        "vitest",
+        "../src/core/paths.js",
+        "../src/core/tasks-store.js"
+      ]
+    },
+    {
+      "path": "tsup.config.ts",
+      "hash": "b75888ae",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "defineConfig",
+          "kind": "default"
+        }
+      ],
+      "imports": [
+        "tsup"
+      ]
+    },
+    {
+      "path": "vitest.config.ts",
+      "hash": "0930822d",
+      "lang": "ts",
+      "purpose": null,
+      "purposeStale": false,
+      "exports": [
+        {
+          "name": "defineConfig",
+          "kind": "default"
+        }
+      ],
+      "imports": [
+        "vitest/config"
+      ]
+    }
+  ],
+  "routes": [],
+  "components": [],
+  "db": {
+    "postgres": [
+      {
+        "table": "orders",
+        "columns": [
+          "id",
+          "user_id",
+          "total",
+          "created_at"
+        ],
+        "source": "examples/sample-next-app/supabase/migrations/0001_init.sql"
+      },
+      {
+        "table": "users",
+        "columns": [
+          "id",
+          "email",
+          "created_at"
+        ],
+        "source": "examples/sample-next-app/supabase/migrations/0001_init.sql"
+      }
+    ],
+    "prisma": [],
+    "mongo": []
+  }
+}

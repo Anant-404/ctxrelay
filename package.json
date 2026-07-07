@@ -1,0 +1,55 @@
+{
+  "name": "agentbridge",
+  "version": "0.1.0",
+  "description": "Context-handoff bridge so multiple AI coding agents can share the state of a project.",
+  "keywords": [
+    "ai",
+    "agents",
+    "claude",
+    "codex",
+    "cursor",
+    "context",
+    "handoff",
+    "codebase-map"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "agentbridge": "./dist/cli.js",
+    "abridge": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "src/wasm"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup && node scripts/copy-wasm.mjs",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "fast-glob": "^3.3.2",
+    "gray-matter": "^4.0.3",
+    "picocolors": "^1.1.1",
+    "web-tree-sitter": "^0.22.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/node": "^20.14.0",
+    "eslint": "^9.9.0",
+    "prettier": "^3.3.3",
+    "tree-sitter-wasms": "^0.1.13",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.63.0",
+    "vitest": "^2.0.5"
+  }
+}

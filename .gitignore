@@ -1,0 +1,8 @@
+node_modules
+dist
+*.log
+.DS_Store
+
+# transient enrichment exchange files
+.aicontext/enrich-request.md
+.aicontext/enrich-response.json
