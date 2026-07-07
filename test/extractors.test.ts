@@ -32,6 +32,24 @@ describe("js-ts", () => {
     expect(names).toContain("c");
   });
 
+  it("extracts CommonJS exports (module.exports, exports.x, object)", () => {
+    expect(extractExports("class Foo {}\nmodule.exports = Foo;").map((e) => e.name)).toContain(
+      "Foo"
+    );
+    expect(
+      extractExports("module.exports = { a, b, c };").map((e) => e.name).sort()
+    ).toEqual(["a", "b", "c"]);
+    const named = extractExports("exports.hello = () => {};\nmodule.exports.bye = 1;").map(
+      (e) => e.name
+    );
+    expect(named).toContain("hello");
+    expect(named).toContain("bye");
+    // module.exports = function Name(){}
+    expect(extractExports("module.exports = function Manager(){}").map((e) => e.name)).toContain(
+      "Manager"
+    );
+  });
+
   it("collects and normalizes imports, dropping node builtins", () => {
     const src = `import fs from "node:fs"; import Stripe from "stripe"; const x = require("./local");`;
     const imports = extractImports(src);

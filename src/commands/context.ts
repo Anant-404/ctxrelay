@@ -231,8 +231,17 @@ export async function runContext(opts: ContextOptions = {}): Promise<void> {
 
   const { text, tokens } = assemble(sections, budget);
   const header = "# Project Context (agentbridge)\n";
-  const full = header + "\n" + text + "\n";
 
+  if (!text.trim()) {
+    const hint = index
+      ? "_No state written yet. Use `agentbridge handoff` / edit `.aicontext/STATE.md`._"
+      : "_Not initialized. Run `agentbridge init` first._";
+    process.stdout.write(header + "\n" + hint + "\n");
+    console.error(pc.dim("empty context — nothing to report yet"));
+    return;
+  }
+
+  const full = header + "\n" + text + "\n";
   process.stdout.write(full);
   console.error(pc.dim(`~${tokens + estimateTokens(header)} tokens (budget ${budget})`));
 }

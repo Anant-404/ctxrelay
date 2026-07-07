@@ -13,10 +13,19 @@
     "codebase-map"
   ],
   "license": "MIT",
+  "author": "Anant-404",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anant-404/context_bridge.git"
+  },
+  "homepage": "https://github.com/Anant-404/context_bridge#readme",
+  "bugs": {
+    "url": "https://github.com/Anant-404/context_bridge/issues"
+  },
   "type": "module",
   "bin": {
-    "agentbridge": "./dist/cli.js",
-    "abridge": "./dist/cli.js"
+    "agentbridge": "dist/cli.js",
+    "abridge": "dist/cli.js"
   },
   "files": [
     "dist",

@@ -1,0 +1,4 @@
+# Generated context + source use LF everywhere so diffs stay clean across
+# Windows/macOS/Linux teammates. The whole point of .aicontext is a clean diff.
+* text=auto eol=lf
+*.wasm binary

@@ -28,10 +28,12 @@ export function extractImports(src: string): string[] {
 export function extractExports(src: string): ExportEntry[] {
   const out: ExportEntry[] = [];
   const seen = new Set<string>();
+  // Dedupe by name — a symbol name is unique per module, so the first kind we
+  // resolve wins (avoids e.g. `module.exports = X` + `module.exports.X = X`
+  // yielding X twice).
   const push = (name: string, kind: ExportEntry["kind"]) => {
-    const key = `${name}:${kind}`;
-    if (!name || seen.has(key)) return;
-    seen.add(key);
+    if (!name || seen.has(name)) return;
+    seen.add(name);
     out.push({ name, kind });
   };
 
@@ -71,6 +73,38 @@ export function extractExports(src: string): ExportEntry[] {
       if (/^[A-Za-z_$][\w$]*$/.test(name)) push(name, "const");
     }
   }
+
+  // --- CommonJS ---
+
+  // module.exports = function Name(){} / class Name {} / = Identifier
+  const meAssign = src.match(
+    /module\.exports\s*=\s*(?:(function\*?|class)\s+)?([A-Za-z_$][\w$]*)?/
+  );
+  if (meAssign) {
+    const kw = meAssign[1];
+    const name = meAssign[2];
+    if (name && !/^\{/.test(name)) {
+      const kind: ExportEntry["kind"] = kw?.startsWith("function")
+        ? "function"
+        : kw === "class"
+          ? "class"
+          : "default";
+      push(name, kind);
+    }
+  }
+
+  // module.exports = { a, b, c }
+  const meObj = src.match(/module\.exports\s*=\s*\{([^}]*)\}/);
+  if (meObj) {
+    for (const part of meObj[1].split(",")) {
+      const key = part.trim().split(":")[0].trim();
+      if (/^[A-Za-z_$][\w$]*$/.test(key)) push(key, "const");
+    }
+  }
+
+  // module.exports.NAME = … and exports.NAME = …
+  const propRe = /(?:module\.)?exports\.([A-Za-z_$][\w$]*)\s*=/g;
+  while ((m = propRe.exec(src))) push(m[1], "const");
 
   return out;
 }
