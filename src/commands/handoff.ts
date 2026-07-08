@@ -42,7 +42,7 @@ function updateState(paths: ProjectPaths, agent: string, now: string): void {
 /** Warn if index.json is older than the newest source file. */
 function checkIndexFreshness(paths: ProjectPaths): void {
   if (!fileExists(paths.index)) {
-    console.error(pc.yellow("note: no index.json yet — run `ctxbridge index`"));
+    console.error(pc.yellow("note: no index.json yet — run `ctxrelay index`"));
     return;
   }
   try {
@@ -54,7 +54,7 @@ function checkIndexFreshness(paths: ProjectPaths): void {
       if (fileExists(c)) newest = Math.max(newest, statSync(c).mtimeMs);
     }
     if (newest > indexMtime) {
-      console.error(pc.yellow("note: source changed since last index — run `ctxbridge index`"));
+      console.error(pc.yellow("note: source changed since last index — run `ctxrelay index`"));
     }
   } catch {
     /* ignore */

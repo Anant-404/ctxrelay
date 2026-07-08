@@ -1,9 +1,9 @@
-# ctxbridge
+# ctxrelay
 
 **Stop re-explaining your project every time you switch AI agents.**
 
 When Claude Code hits its limit and you move to Codex — or Cursor, or Antigravity —
-the next agent starts blind. `ctxbridge` fixes that. It keeps a small, git-diffable
+the next agent starts blind. `ctxrelay` fixes that. It keeps a small, git-diffable
 `.aicontext/` folder in your repo holding the project's living state plus a compact
 **map of the codebase** (symbols, routes, DB schema, components — not the code itself).
 Any agent reads it in one command and picks up exactly where the last one stopped.
@@ -12,7 +12,7 @@ Any agent reads it in one command and picks up exactly where the last one stoppe
 Note- It can also be used to retain context between diifferent claude code , Codex , Cursor or any agent session and agent board feature of this bridge can be used as taskboard handoffs to multiple agents and index feature of agentBridge can be used to index your codebase which saves tokens as AI doesnt need to check whole codebase to find the component first and then do changes , via index it can easily pinpoint where it needs to work.
 
 ```bash
-npx ctxbridge context
+npx ctxrelay context
 ```
 
 - **Zero native deps.** Pure `npx` fetch — no `node-gyp`, no C toolchain. Parsing uses
@@ -26,10 +26,10 @@ npx ctxbridge context
 
 ```bash
 cd your-project
-npx ctxbridge init      # scaffolds .aicontext/, detects your stack, writes agent configs
+npx ctxrelay init      # scaffolds .aicontext/, detects your stack, writes agent configs
 # ... work with Claude Code / Codex / Cursor as normal ...
-npx ctxbridge context   # any agent runs this to get oriented
-npx ctxbridge handoff --from claude-code --stopped "..." --next "..."
+npx ctxrelay context   # any agent runs this to get oriented
+npx ctxrelay handoff --from claude-code --stopped "..." --next "..."
 ```
 
 `init` also writes `CLAUDE.md`, `AGENTS.md`, and `.cursorrules` (in a managed block that
@@ -38,10 +38,10 @@ you don't have to prompt it.
 
 ## What a handoff looks like
 
-Below is real `ctxbridge context` output from this repo — the whole project, in ~800 tokens:
+Below is real `ctxrelay context` output from this repo — the whole project, in ~800 tokens:
 
 ```markdown
-# Project Context (ctxbridge)
+# Project Context (ctxrelay)
 
 ## Current State
 ## Done
@@ -94,23 +94,23 @@ grows, low-priority sections collapse to directory summaries, so the bundle stay
 
 | Command | What it does |
 | --- | --- |
-| `ctxbridge init` | Scaffold `.aicontext/` + agent configs, detect stack, run first index. |
-| `ctxbridge index [--watch] [--verbose]` | Regenerate the codebase map (incremental). |
-| `ctxbridge context [--json] [--budget N]` | Emit the compact orientation bundle. |
-| `ctxbridge status` | Quick "where are we" glance + index freshness. |
-| `ctxbridge handoff --from … --stopped … --next … [--gotchas …] [--files …]` | Write the exit note. |
-| `ctxbridge decision "chose X over Y because Z"` | Append a dated decision. |
-| `ctxbridge enrich [--apply] [--auto]` | Add one-line AI "purpose" summaries to files. |
-| `ctxbridge tasks` | List open/claimed tasks and who they suit. |
-| `ctxbridge task add "title" --suited codex,cursor` | Add a task to the board. |
-| `ctxbridge task claim t-003 --by codex` | Claim a task. |
-| `ctxbridge task done t-003` | Mark a task done. |
+| `ctxrelay init` | Scaffold `.aicontext/` + agent configs, detect stack, run first index. |
+| `ctxrelay index [--watch] [--verbose]` | Regenerate the codebase map (incremental). |
+| `ctxrelay context [--json] [--budget N]` | Emit the compact orientation bundle. |
+| `ctxrelay status` | Quick "where are we" glance + index freshness. |
+| `ctxrelay handoff --from … --stopped … --next … [--gotchas …] [--files …]` | Write the exit note. |
+| `ctxrelay decision "chose X over Y because Z"` | Append a dated decision. |
+| `ctxrelay enrich [--apply] [--auto]` | Add one-line AI "purpose" summaries to files. |
+| `ctxrelay tasks` | List open/claimed tasks and who they suit. |
+| `ctxrelay task add "title" --suited codex,cursor` | Add a task to the board. |
+| `ctxrelay task claim t-003 --by codex` | Claim a task. |
+| `ctxrelay task done t-003` | Mark a task done. |
 
-`abridge` is a shorter alias for `ctxbridge`.
+`abridge` is a shorter alias for `ctxrelay`.
 
 ### Task board
 
-For multi-agent coordination, `ctxbridge task add/claim/done` maintain a git-diffable
+For multi-agent coordination, `ctxrelay task add/claim/done` maintain a git-diffable
 `tasks.json` (mirrored to a human-readable `TASKS.md`). `suited` is advisory metadata you
 set — e.g. codex→UI, cursor→testing, claude-code→foundation — so an agent reading
 `context` knows what to pick up. Open/claimed tasks show up in the `context` bundle.
@@ -135,12 +135,12 @@ All fields optional; a missing `config.json` is fine.
 The one AI-written field is a per-file `purpose` one-liner. It's opt-in and needs no API key:
 
 ```bash
-ctxbridge enrich            # writes .aicontext/enrich-request.md
+ctxrelay enrich            # writes .aicontext/enrich-request.md
 # your agent reads it, writes .aicontext/enrich-response.json
-ctxbridge enrich --apply    # merges the purposes into index.json
+ctxrelay enrich --apply    # merges the purposes into index.json
 ```
 
-If `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` is set, `ctxbridge enrich --auto` fills them in
+If `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` is set, `ctxrelay enrich --auto` fills them in
 one batched request instead. Only changed files (`purposeStale`) get re-enriched, so cost
 stays near zero over time.
 

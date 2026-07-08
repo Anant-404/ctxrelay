@@ -1,5 +1,5 @@
 {
-  "name": "ctxbridge",
+  "name": "ctxrelay",
   "version": "0.1.0",
   "description": "Context-handoff bridge so multiple AI coding agents can share the state of a project.",
   "keywords": [
@@ -24,7 +24,7 @@
   },
   "type": "module",
   "bin": {
-    "ctxbridge": "dist/cli.js",
+    "ctxrelay": "dist/cli.js",
     "abridge": "dist/cli.js"
   },
   "files": [

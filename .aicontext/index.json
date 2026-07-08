@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-08T05:42:07.137Z",
-  "root": "ctxbridge",
+  "generatedAt": "2026-07-08T05:48:03.469Z",
+  "root": "ctxrelay",
   "stack": [],
   "stats": {
     "files": 45,
@@ -146,7 +146,7 @@
     },
     {
       "path": "src/cli.ts",
-      "hash": "81bddcbf",
+      "hash": "a6e5209a",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,
@@ -166,7 +166,7 @@
     },
     {
       "path": "src/commands/context.ts",
-      "hash": "383f45aa",
+      "hash": "1e2f2c9c",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,
@@ -213,7 +213,7 @@
     },
     {
       "path": "src/commands/enrich.ts",
-      "hash": "882d163e",
+      "hash": "f434de8e",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,
@@ -236,7 +236,7 @@
     },
     {
       "path": "src/commands/handoff.ts",
-      "hash": "2954d232",
+      "hash": "49f87c96",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,
@@ -291,7 +291,7 @@
     },
     {
       "path": "src/commands/init.ts",
-      "hash": "a59bd95a",
+      "hash": "52204bbd",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,
@@ -313,7 +313,7 @@
     },
     {
       "path": "src/commands/status.ts",
-      "hash": "82b14261",
+      "hash": "cb219bb3",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,
@@ -884,7 +884,7 @@
     },
     {
       "path": "src/templates/index.ts",
-      "hash": "2fd873f2",
+      "hash": "2ad199ee",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,

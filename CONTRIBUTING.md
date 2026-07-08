@@ -1,4 +1,4 @@
-# Contributing to ctxbridge
+# Contributing to ctxrelay
 
 Thanks for helping! The highest-leverage contribution is **adding an extractor** so
 another framework's routes / models / components show up in the codebase map.

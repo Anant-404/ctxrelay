@@ -74,7 +74,7 @@ export async function runInit(): Promise<void> {
   const result = await runIndex({ silent: true });
 
   // Friendly summary.
-  console.log(pc.green("✓ ctxbridge initialized"));
+  console.log(pc.green("✓ ctxrelay initialized"));
   console.log(`  project:  ${pc.bold(projectName)}`);
   console.log(
     `  stack:    ${stack.length ? stack.map((s) => pc.cyan(s)).join(", ") : pc.dim("none detected")}`
@@ -82,7 +82,7 @@ export async function runInit(): Promise<void> {
   console.log(`  indexed:  ${result.indexedFiles}/${result.totalFiles} files`);
   console.log("");
   console.log("  Agents use these three commands:");
-  console.log(`    ${pc.bold("ctxbridge context")}   read to get oriented`);
-  console.log(`    ${pc.bold("ctxbridge handoff")}   write an exit note before stopping`);
-  console.log(`    ${pc.bold("ctxbridge index")}     refresh the codebase map`);
+  console.log(`    ${pc.bold("ctxrelay context")}   read to get oriented`);
+  console.log(`    ${pc.bold("ctxrelay handoff")}   write an exit note before stopping`);
+  console.log(`    ${pc.bold("ctxrelay index")}     refresh the codebase map`);
 }

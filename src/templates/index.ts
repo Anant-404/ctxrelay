@@ -4,8 +4,8 @@
  * them into `dist/` — the published package ships only `dist` + `src/wasm`.
  */
 
-export const MANAGED_BEGIN = "<!-- BEGIN ctxbridge (managed) -->";
-export const MANAGED_END = "<!-- END ctxbridge (managed) -->";
+export const MANAGED_BEGIN = "<!-- BEGIN ctxrelay (managed) -->";
+export const MANAGED_END = "<!-- END ctxrelay (managed) -->";
 
 export function stateTemplate(now: string): string {
   return `---
@@ -64,7 +64,7 @@ export function decisionsTemplate(): string {
   return `# Decisions
 
 Append-only log of architectural decisions and their rationale.
-Newest entries go at the top. Use \`ctxbridge decision "…"\` to add one.
+Newest entries go at the top. Use \`ctxrelay decision "…"\` to add one.
 `;
 }
 
@@ -73,19 +73,19 @@ export function managedBlock(): string {
   return `${MANAGED_BEGIN}
 ## Working with this project's context bridge
 
-This repo uses ctxbridge to share context across AI agents.
+This repo uses ctxrelay to share context across AI agents.
 
 BEFORE you start working, run:
-    npx ctxbridge context
+    npx ctxrelay context
 This prints the current state, plan, recent decisions, the last handoff note, and a compact map of the codebase. Read it so you don't need the human to re-explain.
 
 WHILE working, if you make a notable architectural decision, append it:
-    npx ctxbridge decision "chose X over Y because Z"
+    npx ctxrelay decision "chose X over Y because Z"
 
 BEFORE you stop (or when you're running low on capacity), write a handoff:
-    npx ctxbridge handoff --from "<your name>" --stopped "..." --next "..." --gotchas "..."
+    npx ctxrelay handoff --from "<your name>" --stopped "..." --next "..." --gotchas "..."
 and refresh the codebase map:
-    npx ctxbridge index
+    npx ctxrelay index
 
 Keep STATE.md accurate. The next agent depends on it.
 ${MANAGED_END}`;
