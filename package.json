@@ -1,6 +1,6 @@
 {
   "name": "ctxrelay",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Context-handoff bridge so multiple AI coding agents can share the state of a project.",
   "keywords": [
     "ai",
