@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-07T19:09:21.560Z",
-  "root": "agentbridge",
+  "generatedAt": "2026-07-08T05:42:07.137Z",
+  "root": "ctxbridge",
   "stack": [],
   "stats": {
     "files": 45,
@@ -146,7 +146,7 @@
     },
     {
       "path": "src/cli.ts",
-      "hash": "b01fe752",
+      "hash": "81bddcbf",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,
@@ -166,7 +166,7 @@
     },
     {
       "path": "src/commands/context.ts",
-      "hash": "40fcc5a0",
+      "hash": "383f45aa",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,
@@ -213,7 +213,7 @@
     },
     {
       "path": "src/commands/enrich.ts",
-      "hash": "ad789e42",
+      "hash": "882d163e",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,
@@ -236,7 +236,7 @@
     },
     {
       "path": "src/commands/handoff.ts",
-      "hash": "585040f7",
+      "hash": "2954d232",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,
@@ -291,7 +291,7 @@
     },
     {
       "path": "src/commands/init.ts",
-      "hash": "243c737d",
+      "hash": "a59bd95a",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,
@@ -313,7 +313,7 @@
     },
     {
       "path": "src/commands/status.ts",
-      "hash": "d16e6520",
+      "hash": "82b14261",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,
@@ -884,7 +884,7 @@
     },
     {
       "path": "src/templates/index.ts",
-      "hash": "678f3b14",
+      "hash": "2fd873f2",
       "lang": "ts",
       "purpose": null,
       "purposeStale": false,

@@ -1,13 +1,14 @@
 ---
-updated: '2026-07-07T18:03:02.519Z'
-fromAgent: claude-code
+updated: 2026-07-08T05:41:46.407Z
+fromAgent: unknown
 ---
+
 # Handoff
 
-**Where I stopped:** core loop done, tests green
+**Where I stopped:** …
 
-**What to do next:** wire CI + publish 0.1.0
+**What to do next:** …
 
-**Gotchas / watch out for:** index.json must stay byte-stable; sort everything
+**Gotchas / watch out for:** …
 
-**Files I touched:** src/commands/*, src/extractors/*
+**Files I touched:** …

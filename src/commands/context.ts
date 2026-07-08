@@ -230,12 +230,12 @@ export async function runContext(opts: ContextOptions = {}): Promise<void> {
   }
 
   const { text, tokens } = assemble(sections, budget);
-  const header = "# Project Context (agentbridge)\n";
+  const header = "# Project Context (ctxbridge)\n";
 
   if (!text.trim()) {
     const hint = index
-      ? "_No state written yet. Use `agentbridge handoff` / edit `.aicontext/STATE.md`._"
-      : "_Not initialized. Run `agentbridge init` first._";
+      ? "_No state written yet. Use `ctxbridge handoff` / edit `.aicontext/STATE.md`._"
+      : "_Not initialized. Run `ctxbridge init` first._";
     process.stdout.write(header + "\n" + hint + "\n");
     console.error(pc.dim("empty context — nothing to report yet"));
     return;

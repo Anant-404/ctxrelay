@@ -138,7 +138,7 @@ async function autoEnrich(
 export async function runEnrich(opts: EnrichOptions): Promise<void> {
   const paths = requireProject();
   const index = readIndex(paths);
-  if (!index) throw new Error("No index.json. Run `agentbridge index` first.");
+  if (!index) throw new Error("No index.json. Run `ctxbridge index` first.");
 
   if (opts.apply) {
     const n = applyResponse(paths, index);
@@ -164,5 +164,5 @@ export async function runEnrich(opts: EnrichOptions): Promise<void> {
   writeText(paths.enrichRequest, buildRequest(files));
   console.log(pc.green(`✓ wrote .aicontext/enrich-request.md`) + ` (${files.length} files)`);
   console.log("  Have your agent read it and write .aicontext/enrich-response.json,");
-  console.log("  then run: " + pc.bold("agentbridge enrich --apply"));
+  console.log("  then run: " + pc.bold("ctxbridge enrich --apply"));
 }

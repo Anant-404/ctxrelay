@@ -20,7 +20,7 @@ function fail(err: unknown): never {
 const program = new Command();
 
 program
-  .name("agentbridge")
+  .name("ctxbridge")
   .description("Share project context across AI coding agents.")
   .version(VERSION, "-v, --version");
 

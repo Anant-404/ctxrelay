@@ -34,7 +34,7 @@ export async function runStatus(): Promise<void> {
   const paths = requireProject();
 
   if (!fileExists(paths.state) && !fileExists(paths.handoff)) {
-    console.log(pc.yellow("No .aicontext yet. Run `agentbridge init`."));
+    console.log(pc.yellow("No .aicontext yet. Run `ctxbridge init`."));
     return;
   }
 
@@ -58,12 +58,12 @@ export async function runStatus(): Promise<void> {
 
   const changed = await changedSinceIndex(paths);
   if (changed === -1) {
-    out.push(section("Index", pc.yellow("no index yet — run `agentbridge index`")));
+    out.push(section("Index", pc.yellow("no index yet — run `ctxbridge index`")));
   } else {
     const msg =
       changed === 0
         ? pc.green("up to date")
-        : pc.yellow(`${changed} file(s) changed since last index — run \`agentbridge index\``);
+        : pc.yellow(`${changed} file(s) changed since last index — run \`ctxbridge index\``);
     out.push(section("Index", msg));
   }
 

@@ -1,4 +1,4 @@
-# Contributing to agentbridge
+# Contributing to ctxbridge
 
 Thanks for helping! The highest-leverage contribution is **adding an extractor** so
 another framework's routes / models / components show up in the codebase map.

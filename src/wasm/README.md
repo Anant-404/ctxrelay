@@ -1,6 +1,6 @@
 # Bundled WASM grammars
 
-These files let `agentbridge` parse code with tree-sitter **without any native
+These files let `ctxbridge` parse code with tree-sitter **without any native
 build step** on the user's machine. They are committed to the repo so no
 compiler/toolchain is ever required to install or run the CLI.
 
