@@ -16,11 +16,11 @@
   "author": "Anant-404",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Anant-404/context_bridge.git"
+    "url": "git+https://github.com/Anant-404/ctxrelay.git"
   },
-  "homepage": "https://github.com/Anant-404/context_bridge#readme",
+  "homepage": "https://github.com/Anant-404/ctxrelay#readme",
   "bugs": {
-    "url": "https://github.com/Anant-404/context_bridge/issues"
+    "url": "https://github.com/Anant-404/ctxrelay/issues"
   },
   "type": "module",
   "bin": {
