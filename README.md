@@ -8,6 +8,9 @@ the next agent starts blind. `agentbridge` fixes that. It keeps a small, git-dif
 **map of the codebase** (symbols, routes, DB schema, components — not the code itself).
 Any agent reads it in one command and picks up exactly where the last one stopped.
 
+
+Note- It can also be used to retain context between diifferent claude code , Codex , Cursor or any agent session and agent board feature of this bridge can be used as taskboard handoffs to multiple agents and index feature of agentBridge can be used to index your codebase which saves tokens as AI doesnt need to check whole codebase to find the component first and then do changes , via index it can easily pinpoint where it needs to work.
+
 ```bash
 npx agentbridge context
 ```
@@ -66,8 +69,6 @@ src/extractors/
   nextjs.ts — nextjsExtractor
 ...
 ```
-
-> Add a GIF of a Claude Code → Codex handoff here.
 
 ## How it works
 
